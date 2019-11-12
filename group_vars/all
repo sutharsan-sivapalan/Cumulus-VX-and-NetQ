@@ -158,13 +158,12 @@ servervars:
 
 # Please add Slack incoming WebHooks if they exist
 netq:
-    cumulus-netq:
-        server:
-            url: 'api.netq.cumulusnetworks.com'
-            accesskey: 'afde6a5fa80bd3bd1022341e0d7e4f8e41f6619ff16b2486022535adbbe48615'
-            secretkey: 'ZtRiC0WOQZeUNGSuK2Vtipkr8HKnxi7r7I94eI/rOV4='
-            premises: 'netq-demo-dc-2'
-            port: 443
-        slack:
-            bgp:
-            all:
+    server:
+        url: 'api.netq.cumulusnetworks.com'
+        accesskey: 'afde6a5fa80bd3bd1022341e0d7e4f8e41f6619ff16b2486022535adbbe48615'
+        secretkey: 'ZtRiC0WOQZeUNGSuK2Vtipkr8HKnxi7r7I94eI/rOV4='
+        premises: 'netq-demo-dc-2'
+        port: 443
+    slack:
+        bgp:
+        all:
