@@ -1,0 +1,41 @@
+- set_fact:
+    myvars: "{{ swvars[inventory_hostname] }}"
+
+- name: Set up interfaces
+  nclu:
+    atomic: true
+    commands:
+    - add interface {{ myvars.ints }} mtu 9216
+    - add loopback lo ip address {{ myvars.loopback }}
+
+- apt_repository:
+      repo: deb http://apps3.cumulusnetworks.com/repos/deb CumulusLinux-3 netq-2.3
+      state: present
+      update_cache: yes
+
+- name: Install NetQ
+  shell: sudo vrf task exec default sudo apt-get -y install cumulus-netq
+
+- name: Configure NetQ
+  shell: |
+      netq config add agent server 10.255.7.3 vrf mgmt
+      netq config restart agent
+
+- name: Configure NetQ CLI
+  shell: netq config add cli server {{ }} access-key {{ }} secret-key {{ }} premises {{ }} port {{ }}
+
+
+- name: Restart NetQ CLI
+  shell: netq config restart cli
+
+- name: NTP - Listen on vagrant interface
+  lineinfile:
+      path: /etc/ntp/ntp.conf
+      regexp: "interface listen eth0"
+      line: "interface listen vagrant"
+      state: present
+
+- name: Stop NTP and start it in default VRF
+  shell: |
+      sudo systemctl stop ntp.service
+      sudo systemctl start ntp@default

@@ -1,0 +1,7 @@
+- name: Configure NetQ-TS interfaces file
+  copy:
+    src: ../templates/interfaces
+    dest: /etc/network/interfaces
+
+- name: Apply host networking changes
+  shell: ifreload -a
