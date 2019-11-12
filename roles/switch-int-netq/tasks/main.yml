@@ -1,6 +1,6 @@
 - set_fact:
     myvars: "{{ swvars[inventory_hostname] }}"
-    netq: "{{ netq[cumulus-netq].server }}"
+    netqserver: "{{ netq.server }}"
 
 - name: Set up interfaces
   nclu:
@@ -23,7 +23,7 @@
       netq config restart agent
 
 - name: Configure NetQ CLI
-  shell: netq config add cli server {{ netq.url }} access-key {{ netq.accesskey }} secret-key {{ netq.secretkey }} premises {{ netq.premises }} port {{ netq.port }}
+  shell: netq config add cli server {{ netqserver.url }} access-key {{ netqserver.accesskey }} secret-key {{ netqserver.secretkey }} premises {{ netqserver.premises }} port {{ netqserver.port }}
 
 
 - name: Restart NetQ CLI
@@ -35,6 +35,11 @@
       regexp: "interface listen eth0"
       line: "interface listen vagrant"
       state: present
+
+#- name: Push ntp.conf
+#  copy:
+#      src: ../templates/ntp.conf
+#      dest: /etc/ntp.conf
 
 - name: Stop NTP and start it in default VRF
   shell: |

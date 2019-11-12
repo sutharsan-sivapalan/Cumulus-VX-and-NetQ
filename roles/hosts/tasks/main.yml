@@ -33,7 +33,7 @@
 - name: Update repositories cache and install NTP
   apt:
     name: ntp
-    update_cache: yes
+    update_cache: no
 
 - name: Enable and start NTP
   systemd:
