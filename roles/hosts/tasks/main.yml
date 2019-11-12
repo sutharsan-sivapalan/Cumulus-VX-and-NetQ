@@ -21,7 +21,7 @@
     ifdown eth2 && ifup eth2
 
 - name: GPG key
-   apt_key:
+  apt_key:
      url: https://apps3.cumulusnetworks.com/setup/cumulus-apps-deb.pubkey
      state: present
 
