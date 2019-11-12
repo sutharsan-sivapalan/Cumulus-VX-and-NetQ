@@ -1,5 +1,6 @@
 - set_fact:
     myvars: "{{ swvars[inventory_hostname] }}"
+    netq: "{{ netq[cumulus-netq].server }}"
 
 - name: Set up interfaces
   nclu:
@@ -22,7 +23,7 @@
       netq config restart agent
 
 - name: Configure NetQ CLI
-  shell: netq config add cli server {{ }} access-key {{ }} secret-key {{ }} premises {{ }} port {{ }}
+  shell: netq config add cli server {{ netq.url }} access-key {{ netq.accesskey }} secret-key {{ netq.secretkey }} premises {{ netq.premises }} port {{ netq.port }}
 
 
 - name: Restart NetQ CLI
