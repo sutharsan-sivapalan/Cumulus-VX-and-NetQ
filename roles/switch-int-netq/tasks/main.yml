@@ -15,7 +15,7 @@
       update_cache: yes
 
 - name: Install NetQ
-  shell: vrf task exec default sudo apt-get -y install cumulus-netq
+  shell: vrf task exec default apt-get -y install cumulus-netq
 
 - name: Configure NetQ
   shell: |
@@ -38,5 +38,5 @@
 
 - name: Stop NTP and start it in default VRF
   shell: |
-      sudo systemctl stop ntp.service
-      sudo systemctl start ntp@default
+      systemctl stop ntp.service
+      systemctl start ntp@default
