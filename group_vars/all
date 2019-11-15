@@ -125,7 +125,7 @@ swvars:
                 host2:
                     name: 'host2'
                     slaves: 'swp9s1'
-                    vlan: 100
+                    vlan: 200
                     clagid: 1
         vlan:
             100: 10.1.100.5/24
