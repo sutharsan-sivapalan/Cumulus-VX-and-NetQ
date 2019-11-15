@@ -12,7 +12,9 @@
 - apt_repository:
       repo: deb http://apps3.cumulusnetworks.com/repos/deb CumulusLinux-3 netq-2.3
       state: present
-      update_cache: yes
+
+- name: Update cache in correct VRF
+  shell: vrf task exec default sudo apt-get update
 
 - name: Install NetQ
   shell: vrf task exec default apt-get -y install cumulus-netq
