@@ -27,7 +27,6 @@
 - name: Configure NetQ CLI
   shell: netq config add cli server {{ netqserver.url }} access-key {{ netqserver.accesskey }} secret-key {{ netqserver.secretkey }} premises {{ netqserver.premises }} port {{ netqserver.port }}
 
-
 - name: Restart NetQ CLI
   shell: netq config restart cli
 
