@@ -1,0 +1,26 @@
+# Created by Topology-Converter v4.7.1
+#    Template Revision: v4.7.1
+
+
+127.0.0.1 localhost 
+127.0.1.1 oob-mgmt-server
+
+10.255.7.1 oob-mgmt-server
+
+
+10.255.7.254 oob-mgmt-switch
+10.255.7.10 spine1
+10.255.7.11 spine2
+10.255.7.12 leaf1A
+10.255.7.13 leaf1B
+10.255.7.14 leaf2A
+10.255.7.15 leaf2B
+10.255.7.20 host1
+10.255.7.21 host2
+10.255.7.3 cumulus-netq
+
+
+# The following lines are desirable for IPv6 capable hosts
+::1     localhost ip6-localhost ip6-loopback
+ff02::1 ip6-allnodes
+ff02::2 ip6-allrouters

@@ -65,9 +65,11 @@
     sudo timedatectl set-ntp no
 
 - name: Configure NetQ CLI
+  when: netqserver.url == 'api.netq.cumulusnetworks.com'
   shell: netq config add cli server {{ netqserver.url }} access-key {{ netqserver.accesskey }} secret-key {{ netqserver.secretkey }} premises {{ netqserver.premises }} port {{ netqserver.port }}
 
 - name: Restart NetQ CLI
+  when: netqserver.url == 'api.netq.cumulusnetworks.com'
   shell: netq config restart cli
 
 - name: Restart NTP

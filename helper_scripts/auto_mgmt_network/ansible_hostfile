@@ -1,0 +1,42 @@
+# Created by Topology-Converter v4.7.1
+#    Template Revision: v4.7.1
+#    https://github.com/cumulusnetworks/topology_converter
+#    using topology data from: netq.dot
+
+
+
+
+[oob-switch]
+oob-mgmt-switch ansible_host=10.255.7.254
+
+
+
+
+
+
+
+[leaf]
+leaf1A ansible_host=10.255.7.12
+leaf1B ansible_host=10.255.7.13
+leaf2A ansible_host=10.255.7.14
+leaf2B ansible_host=10.255.7.15
+
+
+
+[spine]
+spine1 ansible_host=10.255.7.10
+spine2 ansible_host=10.255.7.11
+
+
+
+
+
+[host]
+host1 ansible_host=10.255.7.20
+host2 ansible_host=10.255.7.21
+
+
+[all:vars]
+ansible_user=cumulus
+ansible_become_pass=CumulusLinux!
+ansible_ssh_pass=CumulusLinux!

@@ -1,0 +1,36 @@
+# /etc/dhcp/dhcpd.hosts
+# Created by Topology-Converter v4.7.1
+#    Template Revision: v4.7.1
+#    https://github.com/cumulusnetworks/topology_converter
+#    using topology data from: netq.dot
+
+group {
+
+  option domain-name-servers 10.255.7.1;
+  option domain-name "simulation";
+  option routers 10.255.7.1;
+  option www-server 10.255.7.1;
+  option default-url = "http://10.255.7.1/onie-installer";
+
+
+host oob-mgmt-switch {hardware ethernet 44:38:39:00:00:35; fixed-address 10.255.7.254; option host-name "oob-mgmt-switch"; option cumulus-provision-url "http://10.255.7.1/cumulus-ztp";  } 
+
+host spine1 {hardware ethernet 44:38:39:00:00:26; fixed-address 10.255.7.10; option host-name "spine1"; option cumulus-provision-url "http://10.255.7.1/cumulus-ztp";  } 
+
+host spine2 {hardware ethernet 44:38:39:00:00:28; fixed-address 10.255.7.11; option host-name "spine2"; option cumulus-provision-url "http://10.255.7.1/cumulus-ztp";  } 
+
+host leaf1A {hardware ethernet 44:38:39:00:00:2a; fixed-address 10.255.7.12; option host-name "leaf1A"; option cumulus-provision-url "http://10.255.7.1/cumulus-ztp";  } 
+
+host leaf1B {hardware ethernet 44:38:39:00:00:2c; fixed-address 10.255.7.13; option host-name "leaf1B"; option cumulus-provision-url "http://10.255.7.1/cumulus-ztp";  } 
+
+host leaf2A {hardware ethernet 44:38:39:00:00:2e; fixed-address 10.255.7.14; option host-name "leaf2A"; option cumulus-provision-url "http://10.255.7.1/cumulus-ztp";  } 
+
+host leaf2B {hardware ethernet 44:38:39:00:00:30; fixed-address 10.255.7.15; option host-name "leaf2B"; option cumulus-provision-url "http://10.255.7.1/cumulus-ztp";  } 
+
+host host1 {hardware ethernet 44:38:39:00:00:32; fixed-address 10.255.7.20; option host-name "host1"; } 
+
+host host2 {hardware ethernet 44:38:39:00:00:34; fixed-address 10.255.7.21; option host-name "host2"; } 
+
+host cumulus-netq {hardware ethernet 44:38:39:00:00:24; fixed-address 10.255.7.3; option host-name "cumulus-netq"; } 
+}#End of static host group
+
