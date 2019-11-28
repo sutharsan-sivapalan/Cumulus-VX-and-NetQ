@@ -1,4 +1,4 @@
-graph netq {
+graph vxnetq {
     "oob-mgmt-switch" [function="oob-switch" mgmt_ip="10.255.7.254"]
     "oob-mgmt-server" [function="oob-server" mgmt_ip="10.255.7.1"]
     "cumulus-netq" [os="netqcloud" cpu="4" memory="8192" mgmt_ip="10.255.7.3"]
