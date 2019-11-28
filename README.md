@@ -7,9 +7,11 @@ Control-plane and data-plane validation & verification can be performed within t
 &nbsp;
 
 
+
 ![Topology](./Webscale-Topology.png)
 &nbsp;
 &nbsp;
+
 
 
 ![Topology](./Webscale-Topology-OOB-Mgmt-Network.png)
