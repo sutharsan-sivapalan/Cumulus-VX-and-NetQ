@@ -1,7 +1,6 @@
 - set_fact:
     device: "{{ servervars[inventory_hostname] }}"
     bond0: "{{ servervars[inventory_hostname].bond0 }}"
-    netqserver: "{{ netq.server }}"
 
 - name: Configure interfaces file
   template:
@@ -63,14 +62,6 @@
     netq config add agent server 10.255.7.3
     netq config restart agent
     sudo timedatectl set-ntp no
-
-- name: Configure NetQ CLI
-  when: netqserver.url == 'api.netq.cumulusnetworks.com'
-  shell: netq config add cli server {{ netqserver.url }} access-key {{ netqserver.accesskey }} secret-key {{ netqserver.secretkey }} premises {{ netqserver.premises }} port {{ netqserver.port }}
-
-- name: Restart NetQ CLI
-  when: netqserver.url == 'api.netq.cumulusnetworks.com'
-  shell: netq config restart cli
 
 - name: Restart NTP
   systemd:
