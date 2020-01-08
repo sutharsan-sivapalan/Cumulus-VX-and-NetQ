@@ -1,17 +1,17 @@
 graph vxnetq {
     "oob-mgmt-switch" [function="oob-switch" mgmt_ip="10.255.7.254"]
     "oob-mgmt-server" [function="oob-server" mgmt_ip="10.255.7.1"]
-    "cumulus-netq" [os="netqcloud" cpu="4" memory="8192" mgmt_ip="10.255.7.3"]
+    "cumulus-netq" [os="netqcloud-240" cpu="4" memory="8192" mgmt_ip="10.255.7.3"]
 
-    "spine1" [function="spine" os="CumulusCommunity/cumulus-vx" version="3.7.10" memory="576" config="./helper_scripts/extra_switch_config.sh" mgmt_ip="10.255.7.10"]
-    "spine2" [function="spine" os="CumulusCommunity/cumulus-vx" version="3.7.10" memory="576" config="./helper_scripts/extra_switch_config.sh" mgmt_ip="10.255.7.11"]
-    "leaf1A" [function="leaf" os="CumulusCommunity/cumulus-vx" version="3.7.10" memory="768" config="./helper_scripts/extra_switch_config.sh" mgmt_ip="10.255.7.12"]
-    "leaf1B" [function="leaf" os="CumulusCommunity/cumulus-vx" version="3.7.10" memory="768" config="./helper_scripts/extra_switch_config.sh" mgmt_ip="10.255.7.13"]
-    "leaf2A" [function="leaf" os="CumulusCommunity/cumulus-vx" version="3.7.10" memory="768" config="./helper_scripts/extra_switch_config.sh" mgmt_ip="10.255.7.14"]
-    "leaf2B" [function="leaf" os="CumulusCommunity/cumulus-vx" version="3.7.10" memory="768" config="./helper_scripts/extra_switch_config.sh" mgmt_ip="10.255.7.15"]
+    "spine1" [function="spine" os="CumulusCommunity/cumulus-vx" version="3.7.11" memory="768" config="./helper_scripts/extra_switch_config.sh" mgmt_ip="10.255.7.10"]
+    "spine2" [function="spine" os="CumulusCommunity/cumulus-vx" version="3.7.11" memory="768" config="./helper_scripts/extra_switch_config.sh" mgmt_ip="10.255.7.11"]
+    "leaf1A" [function="leaf" os="CumulusCommunity/cumulus-vx" version="3.7.11" memory="768" config="./helper_scripts/extra_switch_config.sh" mgmt_ip="10.255.7.12"]
+    "leaf1B" [function="leaf" os="CumulusCommunity/cumulus-vx" version="3.7.11" memory="768" config="./helper_scripts/extra_switch_config.sh" mgmt_ip="10.255.7.13"]
+    "leaf2A" [function="leaf" os="CumulusCommunity/cumulus-vx" version="3.7.11" memory="768" config="./helper_scripts/extra_switch_config.sh" mgmt_ip="10.255.7.14"]
+    "leaf2B" [function="leaf" os="CumulusCommunity/cumulus-vx" version="3.7.11" memory="768" config="./helper_scripts/extra_switch_config.sh" mgmt_ip="10.255.7.15"]
 
-    "host1" [function="host" os="ubuntu/xenial64" memory="256" config="./helper_scripts/extra_server_config.sh" mgmt_ip="10.255.7.20"]
-    "host2" [function="host" os="ubuntu/xenial64" memory="256" config="./helper_scripts/extra_server_config.sh" mgmt_ip="10.255.7.21"]
+    "host1" [function="host" os="yk0/ubuntu-xenial" memory="512" config="./helper_scripts/extra_server_config.sh" mgmt_ip="10.255.7.20"]
+    "host2" [function="host" os="yk0/ubuntu-xenial" memory="512" config="./helper_scripts/extra_server_config.sh" mgmt_ip="10.255.7.21"]
 
     "spine1":"swp1" -- "leaf1A":"swp1"
     "spine1":"swp2" -- "leaf1B":"swp1"
