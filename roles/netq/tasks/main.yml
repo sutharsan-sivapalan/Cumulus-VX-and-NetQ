@@ -4,4 +4,6 @@
     dest: /etc/network/interfaces
 
 - name: Apply host networking changes
-  shell: ifreload -a
+  systemd:
+    name: networking
+    state: restarted

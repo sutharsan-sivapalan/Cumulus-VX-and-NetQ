@@ -10,7 +10,7 @@
     - add loopback lo ip address {{ myvars.loopback }}
 
 - apt_repository:
-      repo: deb http://apps3.cumulusnetworks.com/repos/deb CumulusLinux-3 netq-2.3
+      repo: deb http://apps3.cumulusnetworks.com/repos/deb CumulusLinux-3 netq-2.4
       state: present
 
 - name: Update cache in correct VRF
