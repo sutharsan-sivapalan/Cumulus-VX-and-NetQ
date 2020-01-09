@@ -25,15 +25,16 @@
      url: https://apps3.cumulusnetworks.com/setup/cumulus-apps-deb.pubkey
      state: present
 
-- apt_repository:
-      repo: deb [arch=amd64] https://apps3.cumulusnetworks.com/repos/deb xenial netq-latest
-      state: present
-      update_cache: yes
+- name: Add apt repository
+  lineinfile:
+    path: /etc/apt/sources.list
+    line: deb [arch=amd64] https://apps3.cumulusnetworks.com/repos/deb xenial netq-latest
+    create: yes
 
 - name: Update repositories cache and install NTP
   apt:
     name: ntp
-    update_cache: no
+    update_cache: yes
 
 - name: Enable and start NTP
   systemd:

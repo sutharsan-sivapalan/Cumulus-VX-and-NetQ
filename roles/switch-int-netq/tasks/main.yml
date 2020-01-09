@@ -9,9 +9,11 @@
     - add interface {{ myvars.ints }} mtu 9216
     - add loopback lo ip address {{ myvars.loopback }}
 
-- apt_repository:
-      repo: deb http://apps3.cumulusnetworks.com/repos/deb CumulusLinux-3 netq-2.4
-      state: present
+- name: Add apt repository
+  lineinfile:
+    path: /etc/apt/sources.list
+    line: deb http://apps3.cumulusnetworks.com/repos/deb CumulusLinux-3 netq-2.4
+    create: yes
 
 - name: Update cache in correct VRF
   shell: vrf task exec default sudo apt-get update
