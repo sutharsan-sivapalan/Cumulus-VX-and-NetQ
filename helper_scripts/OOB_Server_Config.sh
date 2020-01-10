@@ -22,9 +22,6 @@ if [ "$?" == "0" ]; then
     echo -e "\n\nauto vagrant" > /etc/network/interfaces.d/vagrant.cfg
     echo -e "iface vagrant inet dhcp\n\n" >> /etc/network/interfaces.d/vagrant.cfg
     
-    #Restrict SSH keys utilized
-    echo -e "Host *\n\tIdentitiesOnly=yes" > /home/vagrant/.ssh/config
-
     #echo -e "\n\nauto eth0" > /etc/network/interfaces.d/eth0.cfg
     #echo -e "iface eth0 inet dhcp\n\n" >> /etc/network/interfaces.d/eth0.cfg
 fi

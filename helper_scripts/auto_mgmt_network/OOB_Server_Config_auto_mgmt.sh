@@ -179,6 +179,9 @@ cp /home/cumulus/.ssh/id_rsa* /home/$username/.ssh/
 mv /home/$username/ssh_config /home/$username/.ssh/config
 chown -R $username:$username /home/$username/.ssh/
 
+#Restrict SSH keys utilized
+echo -e "Host *\n\tIdentitiesOnly=yes" > /home/vagrant/.ssh/config
+
 echo "<html><h1>You've come to the OOB-MGMT-Server.</h1></html>" > /var/www/html/index.html
 
 echo " ### Copying Key into /var/www/html... ###"
