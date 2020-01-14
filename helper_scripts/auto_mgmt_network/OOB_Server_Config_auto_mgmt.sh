@@ -180,7 +180,7 @@ mv /home/$username/ssh_config /home/$username/.ssh/config
 chown -R $username:$username /home/$username/.ssh/
 
 #Restrict SSH keys utilized
-echo -e "Host *\n\tIdentitiesOnly=yes" > /home/vagrant/.ssh/config
+echo -e "\n\nHost *\n\tIdentitiesOnly=yes" >> /home/vagrant/.ssh/config
 
 echo "<html><h1>You've come to the OOB-MGMT-Server.</h1></html>" > /var/www/html/index.html
 
